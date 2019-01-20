@@ -4,7 +4,7 @@ const { ApolloServer, gql } = require('apollo-server-express');
 // require('dotenv').load();
 require('./config');
 
-const { User, FlashCardSet } = require('./mongodb/models');
+
 
 const { getUsers } = require('./graphQL/resolvers/queries')
 const { addUser } = require('./graphQL/resolvers/mutations')
@@ -27,7 +27,6 @@ const typeDefs = gql`
         displayName: String 
         fullName: String 
         password: String
-
     }
 
     type FlashCardSet {
@@ -55,8 +54,6 @@ const resolvers = {
     Mutation: {
         addUser
     }
-
-
 }
 
 const server = new ApolloServer({ typeDefs, resolvers });
