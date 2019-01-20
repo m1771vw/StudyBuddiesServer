@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const flashCardSchema = new Schema({
-    setname: String,
+    setName: String,
     description: String,
     creator: String,
     cardColor: String,
